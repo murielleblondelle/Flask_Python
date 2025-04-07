@@ -1,21 +1,20 @@
 from flask import Flask
 from flask import render_template
-from flask import json                                                                                                                                     
-app = Flask(__name__)                                              
-from flask import render_template
-from flask import json
+from flask import json                                                                                                                             
 
-app = Flask(__name__)
+app = Flask(_name_)                                                                                                                  
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
-    pyramide = '<pre>'
-    for i in range(1, valeur + 1):
-        espaces = ' ' * (valeur - i)
-        chiffres = ''.join(str(j) for j in range(1, i + 1)) + ''.join(str(j) for j in range(i - 1, 0, -1))
-        pyramide += espaces + chiffres + '\n'
-    pyramide += '</pre>'
-    return pyramide
+    a, b = 0, 1
+    suite = [a, b]
+    for i in range(2, valeur):
+        c = a + b
+        suite.append(c)
+        a, b = b, c
+    # Conversion de la liste en chaîne de caractères séparée par des virgules
+    return ', '.join(str(num) for num in suite[:valeur])
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if _name_ == "_main_":
+  app.run(debug=True)
+                                    
