@@ -10,4 +10,4 @@ for i in range(n):
         max_value = num
 
 print("La valeur maximale est :", max_value)
-```                                                          
+                                                          
